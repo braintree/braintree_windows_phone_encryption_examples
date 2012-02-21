@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="BraintreeEncryptionExample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Braintree Payments Example App" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="0,39,0,0" Name="CreditCardNumber" Text="" VerticalAlignment="Top" Width="456" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,17,0,0" Name="CreditCardNumberTextBlock" Text="Credit Card Number:" VerticalAlignment="Top" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="0,139,0,0" Name="ExpirationDate" Text="" VerticalAlignment="Top" Width="456" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,117,0,0" Name="ExpirationDateTextBlock" Text="Expiration Date:" VerticalAlignment="Top" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="0,239,0,0" Name="Cvv" Text="" VerticalAlignment="Top" Width="456" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,217,0,0" Name="CvvTextBlock" Text="CVV:" VerticalAlignment="Top" />
+            <Button Content="Submit" Height="72" HorizontalAlignment="Left" Margin="0,317,0,0" Name="Submit" VerticalAlignment="Top" Width="160" Click="SubmitButton_Click" />
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
+            <shell:ApplicationBarIconButton x:Name="Settings" IconUri="/icons/appbar.feature.settings.rest.png" Text="Settings" Click="Settings_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
